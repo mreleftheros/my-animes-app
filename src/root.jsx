@@ -13,6 +13,7 @@ import {
 } from "solid-start";
 import "./korg/index.scss";
 import Nav from "./components/Nav";
+import { TITLE } from "./site";
 
 export default function Root() {
   return (
@@ -21,20 +22,23 @@ export default function Root() {
         <Title>Tmdb Movies App</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Title>{TITLE}</Title>
       </Head>
-      <Body>
+      <Body class="bg-primary-500 text-primary-900">
         <Suspense>
           <ErrorBoundary>
-            <header className="header bg-primary-500 text-primary-100">
+            <header className="header bg-primary-700 text-primary-100">
               <Nav />
             </header>
-            <main className="main p-s">
+            <main className="main">
               <Routes>
                 <FileRoutes />
               </Routes>
             </main>
             <footer className="footer bg-primary-900 text-primary-100">
-              <p>Copyright &copy; 2022 Tmdb Movies App</p>
+              <p>
+                Copyright &copy; {new Date().getFullYear()} {TITLE}
+              </p>
             </footer>
           </ErrorBoundary>
         </Suspense>

@@ -1,6 +1,5 @@
-import { A } from "solid-start";
-import { Title } from "solid-start";
-import { TITLE } from "../data";
+import { A, Title } from "solid-start";
+import { TITLE } from "../site";
 import { HttpStatusCode } from "solid-start/server";
 
 export default function NotFound() {
@@ -8,7 +7,7 @@ export default function NotFound() {
     <>
       <Title>Not Found | {TITLE}</Title>
       <HttpStatusCode code={404} />
-      <h1 class="my-l">Oops...Page Not Found!</h1>
+      <h1 class="my-l">Oops...Page is missing!</h1>
       <A class="btn bg-secondary rounded-s" href="/">
         Go to home
       </A>

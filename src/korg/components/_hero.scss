@@ -41,14 +41,14 @@
 
   &-empty-stars {
     position: absolute;
-    background-image: url("empty-stars.png");
+    background-image: url("/empty-stars.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
   }
   
   &-filled-stars {
     position: absolute;
-    background-image: url("filled-stars.png");
+    background-image: url("/filled-stars.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
   }

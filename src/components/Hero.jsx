@@ -1,6 +1,3 @@
-import emptyStars from "~/assets/empty-stars.png";
-import filledStars from "~/assets/filled-stars.png";
-
 const Hero = props => {
   return (
     <section class="hero p-s">
@@ -22,6 +19,9 @@ const Hero = props => {
         <h2>
           {props.featured.title} ({props.featured.year})
         </h2>
+        <p>
+          <em>{props.featured.genres.map(g => g.name).join(", ")}</em>
+        </p>
         <div class="hero-rating">
           <div class="hero-stars hero-empty-stars">
             <div
@@ -30,9 +30,6 @@ const Hero = props => {
           </div>
         </div>
         <span>{props.featured.scored_by} ratings</span>
-        <p>
-          <em>{props.featured.genres.map(g => g.name).join(", ")}</em>
-        </p>
         <p>{props.featured.episodes} episodes</p>
         <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
           {props.featured.airing ? "Ongoing" : "Finished"}

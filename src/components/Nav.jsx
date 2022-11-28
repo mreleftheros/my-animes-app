@@ -1,5 +1,4 @@
 import { A } from "solid-start";
-import home from "~/assets/home.svg";
 
 const Nav = () => {
   return (

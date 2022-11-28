@@ -26,11 +26,12 @@ const Hero = props => {
           <div class="hero-stars hero-empty-stars">
             <div
               class="hero-stars hero-filled-stars"
-              style={{ width: `${(props.featured.score / 10) * 100}%` }}></div>
+              style={{ width: `${(props.featured.score / 10) * 100}%` }}
+            ></div>
           </div>
         </div>
         <span>{props.featured.scored_by} ratings</span>
-        <p>{props.featured.episodes} episodes</p>
+        {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
         <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
           {props.featured.airing ? "Ongoing" : "Finished"}
         </p>

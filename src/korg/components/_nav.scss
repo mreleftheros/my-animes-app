@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &-logo {
+    font-family: monospace;
+    font-size: get-clamp(l);
+    font-weight: 700;
+  }
+
+  &-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &-link {
+    font-size: get-clamp(s);
+    transition: opacity 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}

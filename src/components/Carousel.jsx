@@ -59,6 +59,7 @@ const Carousel = props => {
             class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="beginning of slides"
             onClick={resetIndex}
+            classList={{ disabled: index() === 0 }}
             disabled={index() === 0}
           >
             «
@@ -68,6 +69,7 @@ const Carousel = props => {
             class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="previous slides"
             onClick={[updateIndex, -1]}
+            classList={{ disabled: index() === 0 }}
             disabled={index() === 0}
           >
             ‹
@@ -79,6 +81,7 @@ const Carousel = props => {
             class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="next slides"
             onClick={() => setIndex(prev => prev + 1)}
+            classList={{ disabled: index() === merged.data.length - 1 }}
             disabled={index() === merged.data.length - 1}
           >
             ›
@@ -88,6 +91,7 @@ const Carousel = props => {
             class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="end of slides"
             onClick={setLastIndex}
+            classList={{ disabled: index() === merged.data.length - 1 }}
             disabled={index() === merged.data.length - 1}
           >
             »

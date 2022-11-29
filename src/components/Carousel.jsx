@@ -17,10 +17,12 @@ const Carousel = props => {
   return (
     <section class="section-s flow bg-primary-400 text-primary-900">
       <h2>{merged.title}</h2>
-        {index()} {merged.data.length}
       <div class="carousel">
         <Show when={merged.data.length > 0}>
-          <Show when={prev() || prev() === 0} fallback={<div class="card"></div>}>
+          <Show
+            when={prev() || prev() === 0}
+            fallback={<div class="card"></div>}
+          >
             <Card
               title={merged.data[prev()].title}
               img={

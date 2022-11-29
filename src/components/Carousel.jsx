@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const Carousel = props => {
   const [index, setIndex] = createSignal(0);
-  const merged = mergeProps({ title: "", data: [] }, props);
+  const merged = mergeProps({ title: "", data: [], link: "/anime" }, props);
   const prev = () => (index() === 0 ? null : index() - 1);
   const next = () => (index() === merged.data.length - 1 ? null : index() + 1);
 
@@ -94,9 +94,12 @@ const Carousel = props => {
           </button>
         </div>
       </div>
-      <button type="button" class="mx-auto btn bg-secondary rounded-s">
-        <A href="/anime">Explore All</A>
-      </button>
+
+      <A href={merged.link}>
+        <button type="button" class="mx-auto btn bg-secondary rounded-s">
+          Explore All
+        </button>
+      </A>
     </section>
   );
 };

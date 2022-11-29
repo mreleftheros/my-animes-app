@@ -29,7 +29,7 @@ const Index = () => {
       <Show when={data()}>
         <Hero featured={data()?.featured} />
         <Carousel title="Popular Anime" data={data()?.anime} />
-        <Carousel title="Popular Manga" data={data()?.manga} />
+        <Carousel title="Popular Manga" data={data()?.manga} link="/manga" />
       </Show>
     </>
   );

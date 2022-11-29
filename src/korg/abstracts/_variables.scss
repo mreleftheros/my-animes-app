@@ -1,11 +1,11 @@
 @use "sass:color";
 
 // colors
-$primary: hsl(160, 95%, 50%) !default;
+$primary: hsl(39, 75%, 50%) !default;
 $secondary: color.complement($primary) !default;
-$error: hsl(340, 95%, 50%) !default;
-$info: hsl(50, 95%, 50%) !default;
-$success: hsl(140, 95%, 50%) !default;
+$error: hsl(340, 75%, 50%) !default;
+$info: hsl(50, 75%, 50%) !default;
+$success: hsl(140, 75%, 50%) !default;
 
 // spacing
 $spacing: 1rem !default;

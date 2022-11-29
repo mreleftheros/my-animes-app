@@ -7,14 +7,15 @@ export const routeData = () => {
   return createRouteData(async () => {
     const urls = [
       "https://api.jikan.moe/v4/top/anime?type=tv&filter=bypopularity",
-      "https://api.jikan.moe/v4/top/manga?type=manga&filter=bypopularity"
+      "https://api.jikan.moe/v4/top/manga?type=manga&filter=bypopularity",
+      "https://api.jikan.moe/v4/random/anime"
     ];
 
     return await Promise.all(
       urls.map(u => fetch(u).then(res => res.json()))
     ).then(values => {
       const allItems = [...values[0].data, ...values[1].data];
-      const featured = allItems[Math.floor(Math.random() * allItems.length)];
+      let featured = values[2].data;
       return { anime: values[0].data, manga: values[1].data, featured };
     });
   });

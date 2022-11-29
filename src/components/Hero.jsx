@@ -30,7 +30,12 @@ const Hero = props => {
             ></div>
           </div>
         </div>
-        <span>{props.featured.scored_by} ratings</span>
+        {props.featured.scored_by && (
+          <span>{props.featured.scored_by} ratings</span>
+        )}
+        <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
+          {props.featured.airing ? "Ongoing" : "Ended"}
+        </p>
         {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
         <p>{props.featured.synopsis}</p>
       </div>

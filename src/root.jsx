@@ -27,7 +27,7 @@ export default function Root() {
       <Body class="bg-primary-500 text-primary-900">
         <Suspense>
           <ErrorBoundary>
-            <header className="header bg-primary-700 text-primary-100">
+            <header className="header bg-primary-800 text-primary-100">
               <Nav />
             </header>
             <main className="main flow-l">

@@ -1,6 +1,6 @@
 const Hero = props => {
   return (
-    <section class="hero p-s">
+    <section class="hero bg-primary-600">
       <div>
         <img
           src={
@@ -15,14 +15,14 @@ const Hero = props => {
         />
         <figure class="hero-figure"></figure>
       </div>
-      <div class="py-xl text-primary-50 flow hero-box">
+      <div class="text-primary-50 flow hero-box">
         <h2>
           {props.featured.title} ({props.featured.year})
         </h2>
         <p>
           <em>{props.featured.genres.map(g => g.name).join(", ")}</em>
         </p>
-        <div class="hero-rating">
+        <div class="hero-rating" title={`${props.featured.score} / 10`}>
           <div class="hero-stars hero-empty-stars">
             <div
               class="hero-stars hero-filled-stars"
@@ -32,9 +32,6 @@ const Hero = props => {
         </div>
         <span>{props.featured.scored_by} ratings</span>
         {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
-        <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
-          {props.featured.airing ? "Ongoing" : "Finished"}
-        </p>
         <p>{props.featured.synopsis}</p>
       </div>
     </section>

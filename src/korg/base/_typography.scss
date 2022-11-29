@@ -1,8 +1,10 @@
 @use "../abstracts/" as *;
 
 //
-h1, h2, h3 {
-  letter-spacing: .1rem;
+h1,
+h2,
+h3 {
+  letter-spacing: 0.1rem;
   line-height: 1.1;
   max-width: 25ch;
   font-size: get-clamp(l);
@@ -42,4 +44,20 @@ p {
   @include mq(m) {
     max-width: 60ch;
   }
+}
+
+section {
+  padding: 5rem 1.5rem;
+}
+
+.section-s {
+  min-height: 75vh;
+}
+
+.section-m {
+  min-height: 100vh;
+}
+
+.section-l {
+  min-height: 125vh;
 }

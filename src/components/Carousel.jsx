@@ -3,7 +3,7 @@ import { A } from "solid-start";
 import Card from "./Card";
 
 const Carousel = props => {
-  const [index, setIndex] = createSignal(0);
+  const [index, setIndex] = createSignal(1);
   const merged = mergeProps({ title: "", data: [], link: "/anime" }, props);
   const prev = () => (index() === 0 ? null : index() - 1);
   const next = () => (index() === merged.data.length - 1 ? null : index() + 1);
@@ -15,7 +15,7 @@ const Carousel = props => {
   const setLastIndex = () => setIndex(merged.data.length - 1);
 
   return (
-    <section class="section-s flow bg-primary-400 text-primary-900">
+    <section class="section-s flow text-primary-900">
       <h2>{merged.title}</h2>
       <div class="carousel">
         <Show when={merged.data.length > 0}>
@@ -56,7 +56,7 @@ const Carousel = props => {
         <div class="carousel-btn-group">
           <button
             type="button"
-            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
+            class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="beginning of slides"
             onClick={resetIndex}
             disabled={index() === 0}
@@ -65,7 +65,7 @@ const Carousel = props => {
           </button>
           <button
             type="button"
-            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
+            class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="previous slides"
             onClick={[updateIndex, -1]}
             disabled={index() === 0}
@@ -76,7 +76,7 @@ const Carousel = props => {
         <div class="carousel-btn-group">
           <button
             type="button"
-            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
+            class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="next slides"
             onClick={() => setIndex(prev => prev + 1)}
             disabled={index() === merged.data.length - 1}
@@ -85,7 +85,7 @@ const Carousel = props => {
           </button>
           <button
             type="button"
-            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
+            class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
             aria-label="end of slides"
             onClick={setLastIndex}
             disabled={index() === merged.data.length - 1}

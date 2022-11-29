@@ -56,7 +56,7 @@ const Carousel = props => {
         <div class="carousel-btn-group">
           <button
             type="button"
-            class="btn rounded-l"
+            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
             aria-label="beginning of slides"
             onClick={resetIndex}
             disabled={index() === 0}
@@ -65,7 +65,7 @@ const Carousel = props => {
           </button>
           <button
             type="button"
-            class="btn rounded-l"
+            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
             aria-label="previous slides"
             onClick={[updateIndex, -1]}
             disabled={index() === 0}
@@ -76,7 +76,7 @@ const Carousel = props => {
         <div class="carousel-btn-group">
           <button
             type="button"
-            class="btn rounded-l"
+            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
             aria-label="next slides"
             onClick={() => setIndex(prev => prev + 1)}
             disabled={index() === merged.data.length - 1}
@@ -85,7 +85,7 @@ const Carousel = props => {
           </button>
           <button
             type="button"
-            class="btn rounded-l"
+            class="btn bg-primary-600 px-xl text-primary-100 rounded-l"
             aria-label="end of slides"
             onClick={setLastIndex}
             disabled={index() === merged.data.length - 1}

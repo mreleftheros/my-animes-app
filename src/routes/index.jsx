@@ -14,9 +14,7 @@ export const routeData = () => {
     return await Promise.all(
       urls.map(u => fetch(u).then(res => res.json()))
     ).then(values => {
-      const allItems = [...values[0].data, ...values[1].data];
-      let featured = values[2].data;
-      return { anime: values[0].data, manga: values[1].data, featured };
+      return { anime: values[0].data, manga: values[1].data, featured: values[2].data };
     });
   });
 };

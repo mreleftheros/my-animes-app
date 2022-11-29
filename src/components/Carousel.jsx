@@ -17,7 +17,7 @@ const Carousel = props => {
   return (
     <section class="section-s flow text-primary-900">
       <h2>{merged.title}</h2>
-      <div class="carousel">
+      <div class="carousel p-s rounded-s bg-primary-700">
         <Show when={merged.data.length > 0}>
           <Show
             when={prev() || prev() === 0}

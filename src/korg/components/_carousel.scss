@@ -3,7 +3,11 @@
 .carousel {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: .5rem;
+
+  @include mq(s) {
+    gap: 2.5rem;
+  }
 
   &-btns {
     display: flex;

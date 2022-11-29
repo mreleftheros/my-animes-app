@@ -2,11 +2,16 @@
 
 .card {
   align-self: center;
-  flex: 0 1 30rem;
-  height: 40rem;
+  flex: 0 1 25rem;
+  height: 30rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
+  @include mq(s) {
+    flex: 0 1 30rem;
+    height: 40rem;
+  }
 
   &-overlay {
     position: absolute;

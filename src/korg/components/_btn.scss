@@ -9,7 +9,7 @@
   font-weight: 400;
   transition: opacity .3s ease-out;
 
-  &:hover {
+  &:hover:not(:disabled) {
     opacity: .75;
   }
 }

@@ -13,7 +13,7 @@ export const routeData = ({ location }) => {
   return createRouteData(
     async key => {
       const res = await fetch(
-        `https://api.jikan.moe/v4/top/anime?type=manga&page=${key[0] || 1}${
+        `https://api.jikan.moe/v4/top/manga?type=manga&page=${key[0] || 1}${
           key[1] ? `&filter=${key[1]}` : ""
         }`
       );

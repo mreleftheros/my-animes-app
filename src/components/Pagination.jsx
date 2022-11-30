@@ -7,8 +7,8 @@ const Pagination = props => {
   );
 
   return (
-    <div class="flex gap-xl">
-      <div class="flex gap-m">
+    <div class="flex gap-l">
+      <div class="flex gap-s">
         <button
           type="button"
           class="btn bg-primary-800 px-xl text-primary-100 rounded-l"
@@ -33,7 +33,7 @@ const Pagination = props => {
       <p>
         {merged.currentPage} / {merged.lastPage}
       </p>
-      <div class="flex gap-m">
+      <div class="flex gap-s">
         <button
           type="button"
           class="btn bg-primary-800 px-xl text-primary-100 rounded-l"

@@ -14,7 +14,11 @@ export const routeData = () => {
     return await Promise.all(
       urls.map(u => fetch(u).then(res => res.json()))
     ).then(values => {
-      return { anime: values[0].data, manga: values[1].data, featured: values[2].data };
+      return {
+        anime: values[0].data,
+        manga: values[1].data,
+        featured: values[2].data
+      };
     });
   });
 };
@@ -27,8 +31,8 @@ const Index = () => {
       <Title>Home | {TITLE}</Title>
       <Show when={data()}>
         <Hero featured={data()?.featured} />
-        <Carousel title="Popular Anime" data={data()?.anime} />
-        <Carousel title="Popular Manga" data={data()?.manga} link="/manga" />
+        <Carousel type="anime" data={data()?.anime} />
+        <Carousel type="manga" data={data()?.manga} link="/manga" />
       </Show>
     </>
   );

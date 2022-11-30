@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const Carousel = props => {
   const [index, setIndex] = createSignal(1);
-  const merged = mergeProps({ title: "", data: [], link: "/anime" }, props);
+  const merged = mergeProps({ type: "", data: [], link: "/anime" }, props);
   const prev = () => (index() === 0 ? null : index() - 1);
   const next = () => (index() === merged.data.length - 1 ? null : index() + 1);
 
@@ -16,7 +16,7 @@ const Carousel = props => {
 
   return (
     <section class="section-s flow text-primary-900">
-      <h2>{merged.title}</h2>
+      <h2>Popular {merged.type[0].toUpperCase() + merged.type.slice(1)}</h2>
       <div class="carousel p-s rounded-s bg-primary-700">
         <Show when={merged.data.length > 0}>
           <Show
@@ -30,6 +30,7 @@ const Carousel = props => {
                   ? merged.data[prev()].images.webp.image_url
                   : merged.data[prev()].images.jpg.image_url
               }
+              link={`/${merged.type}/${merged.data[prev()].mal_id}`}
             />
           </Show>
           <Card
@@ -39,6 +40,7 @@ const Carousel = props => {
                 ? merged.data[index()].images.webp.image_url
                 : merged.data[index()].images.jpg.image_url
             }
+            link={`/${merged.type}/${merged.data[index()].mal_id}`}
           />
           <Show when={next()} fallback={<div class="card"></div>}>
             <Card
@@ -48,6 +50,7 @@ const Carousel = props => {
                   ? merged.data[next()].images.webp.image_url
                   : merged.data[next()].images.jpg.image_url
               }
+              link={`/${merged.type}/${merged.data[next()].mal_id}`}
             />
           </Show>
         </Show>
@@ -100,7 +103,7 @@ const Carousel = props => {
       </div>
 
       <A href={merged.link}>
-        <button type="button" class="mx-auto btn bg-secondary rounded-s">
+        <button type="button" class="mx-auto btn bg-secondary rounded-xl">
           Explore All
         </button>
       </A>

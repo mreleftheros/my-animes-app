@@ -9,7 +9,7 @@ export default function NotFound() {
       <HttpStatusCode code={404} />
       <h1 class="my-l">Oops...Page is missing!</h1>
       <A class="btn bg-secondary rounded-s" href="/">
-        Go to home
+        Go home
       </A>
     </div>
   );

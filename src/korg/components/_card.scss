@@ -10,7 +10,7 @@
 
   @include mq(s) {
     flex: 0 1 30rem;
-    height: 40rem;
+    height: 35rem;
   }
 
   &-overlay {
@@ -35,8 +35,8 @@
   &-title {
     font-size: get-clamp(s);
     line-height: 1.1;
-    letter-spacing: .1rem;
-    font-family: cursive;
+    letter-spacing: 0.1rem;
+    font-family: monospace;
     max-width: 25ch;
   }
 }

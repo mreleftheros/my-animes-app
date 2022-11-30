@@ -30,7 +30,7 @@ export default function Root() {
             <header className="header bg-primary-800 text-primary-100">
               <Nav />
             </header>
-            <main className="main flow-l">
+            <main className="main flow-l text-primary-900">
               <Routes>
                 <FileRoutes />
               </Routes>

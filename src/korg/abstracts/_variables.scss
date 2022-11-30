@@ -1,7 +1,7 @@
 @use "sass:color";
 
 // colors
-$primary: hsl(39, 75%, 50%) !default;
+$primary: hsl(194, 75%, 50%) !default;
 $secondary: color.complement($primary) !default;
 $error: hsl(340, 75%, 50%) !default;
 $info: hsl(50, 75%, 50%) !default;

@@ -2,12 +2,10 @@
 @use "sass:color";
 
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 5rem;
-  position: relative;
-  min-height: 75vh;
 
   &-figure {
     position: absolute;

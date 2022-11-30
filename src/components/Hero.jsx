@@ -17,7 +17,8 @@ const Hero = props => {
       </div>
       <div class="text-primary-50 flow hero-box">
         <h2>
-          {props.featured.title} ({props.featured.year})
+          {props.featured.title}{" "}
+          {props.featured.year && `(${props.featured.year})`}
         </h2>
         <p>
           <em>{props.featured.genres.map(g => g.name).join(", ")}</em>
@@ -34,7 +35,7 @@ const Hero = props => {
           <span>{props.featured.scored_by} ratings</span>
         )}
         <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
-          {props.featured.airing ? "Ongoing" : "Ended"}
+          {props.featured.airing ? "Ongoing" : "Finished"}
         </p>
         {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
         <p>{props.featured.synopsis}</p>

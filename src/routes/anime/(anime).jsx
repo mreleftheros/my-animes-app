@@ -31,11 +31,6 @@ export const routeData = ({ location }) => {
 const Index = () => {
   const anime = useRouteData();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [page, setPage] = createSignal(+searchParams.page || 1);
-
-  createEffect(() => setSearchParams({ page: page() }));
-
-  const updatePage = val => setPage(val);
 
   return (
     <>
@@ -50,11 +45,11 @@ const Index = () => {
             </em>
           </p>
           <Pagination
-            currentPage={page()}
+            currentPage={anime()?.pagination?.current_page}
             lastPage={
               anime()?.pagination && anime().pagination.last_visible_page
             }
-            onPage={updatePage}
+            onPage={setSearchParams}
           />
           <div class="grid gap-s">
             <For each={anime()?.data}>
@@ -76,7 +71,7 @@ const Index = () => {
             lastPage={
               anime()?.pagination && anime().pagination.last_visible_page
             }
-            onPage={updatePage}
+            onPage={setSearchParams}
           />
         </div>
       </section>

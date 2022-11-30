@@ -5,7 +5,7 @@
   align-items: center;
   height: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: start;
   
   @include mq(s) {
     flex-direction: column;

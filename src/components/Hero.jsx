@@ -21,7 +21,7 @@ const Hero = props => {
           {props.featured.year && `(${props.featured.year})`}
         </h2>
         <p>
-          <em>{props.featured.genres.map(g => g.name).join(", ")}</em>
+          <em>{props.featured?.genres?.map(g => g.name).join(", ")}</em>
         </p>
         <div class="hero-rating" title={`${props.featured.score} / 10`}>
           <div class="hero-stars hero-empty-stars">
@@ -34,8 +34,14 @@ const Hero = props => {
         {props.featured.scored_by && (
           <span>{props.featured.scored_by} ratings</span>
         )}
-        <p class={`${props.featured.airing ? "text-success" : "text-error"}`}>
-          {props.featured.airing ? "Ongoing" : "Finished"}
+        <p
+          class={`${
+            props.featured[props.type === "anime" ? "airing" : "publishing"]
+              ? "text-success"
+              : "text-error"
+          }`}
+        >
+          {props.featured[props.type === "anime" ? "airing" : "publishing"] ? "Ongoing" : "Finished"}
         </p>
         {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
         <p>{props.featured.synopsis}</p>

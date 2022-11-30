@@ -30,7 +30,7 @@ const Index = () => {
     <>
       <Title>Home | {TITLE}</Title>
       <Show when={data()}>
-        <Hero featured={data()?.featured} />
+        <Hero featured={data()?.featured} type="anime" />
         <Carousel type="anime" data={data()?.anime} />
         <Carousel type="manga" data={data()?.manga} link="/manga" />
       </Show>

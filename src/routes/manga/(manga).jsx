@@ -7,7 +7,7 @@ import {
 import Card from "~/components/Card";
 import Filter from "~/components/Filter";
 import Pagination from "~/components/Pagination";
-import { ANIME_FILTERS, TITLE } from "~/site";
+import { MANGA_FILTERS, TITLE } from "~/site";
 
 export const routeData = ({ location }) => {
   return createRouteData(
@@ -27,47 +27,47 @@ export const routeData = ({ location }) => {
 };
 
 const Index = () => {
-  const anime = useRouteData();
+  const manga = useRouteData();
   const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <>
-      <Title>Anime | {TITLE}</Title>
+      <Title>Manga | {TITLE}</Title>
       <section class="flow">
-        <Filter filters={ANIME_FILTERS} onChange={setSearchParams} />
+        <Filter filters={MANGA_FILTERS} onChange={setSearchParams} />
         <div class="flow bg-primary-600 px-s py-l rounded-s">
           <p>
             <em>
-              {anime()?.pagination &&
-                `${anime()?.pagination.items.total} results found`}
+              {manga()?.pagination &&
+                `${manga()?.pagination.items.total} results found`}
             </em>
           </p>
           <Pagination
-            currentPage={anime()?.pagination?.current_page}
+            currentPage={manga()?.pagination?.current_page}
             lastPage={
-              anime()?.pagination && anime().pagination.last_visible_page
+              manga()?.pagination && manga().pagination.last_visible_page
             }
             onPage={setSearchParams}
           />
           <div class="grid gap-s">
-            <For each={anime()?.data}>
-              {a => (
+            <For each={manga()?.data}>
+              {m => (
                 <Card
-                  title={a.title}
+                  title={m.title}
                   img={
-                    a.images.webp
-                      ? a.images.webp.image_url
-                      : a.images.jpg.image_url
+                    m.images.webp
+                      ? m.images.webp.image_url
+                      : m.images.jpg.image_url
                   }
-                  link={`/anime/${a.mal_id}`}
+                  link={`/manga/${m.mal_id}`}
                 />
               )}
             </For>
           </div>
           <Pagination
-            currentPage={anime()?.pagination && anime().pagination.current_page}
+            currentPage={manga()?.pagination && manga().pagination.current_page}
             lastPage={
-              anime()?.pagination && anime().pagination.last_visible_page
+              manga()?.pagination && manga().pagination.last_visible_page
             }
             onPage={setSearchParams}
           />

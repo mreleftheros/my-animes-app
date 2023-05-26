@@ -10,7 +10,12 @@ const Card = props => {
         <div class="card-overlay bg-primary-900 p-s">
           <h4 class="card-title text-primary-50">{merged.title}</h4>
         </div>
-        <img class="card-img" src={merged.img} alt={merged.title} />
+        <img
+          class="card-img"
+          loading="lazy"
+          src={merged.img}
+          alt={merged.title}
+        />
       </A>
     </div>
   );

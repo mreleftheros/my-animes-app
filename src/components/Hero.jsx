@@ -8,9 +8,10 @@ const Hero = props => {
               ? props.featured.images.webp.large_image_url
               : props.featured?.images?.jpg?.large_image_url
           }
-          alt="hero image"
+          alt="featured anime"
           height={450}
           width={350}
+          loading="eager"
           class="hero-img rounded-s"
         />
         <figure class="hero-figure"></figure>
@@ -41,7 +42,9 @@ const Hero = props => {
               : "text-error"
           }`}
         >
-          {props.featured[props.type === "anime" ? "airing" : "publishing"] ? "Ongoing" : "Finished"}
+          {props.featured[props.type === "anime" ? "airing" : "publishing"]
+            ? "Ongoing"
+            : "Finished"}
         </p>
         {props.featured.episodes && <p>{props.featured.episodes} episodes</p>}
         <p>{props.featured.synopsis}</p>
